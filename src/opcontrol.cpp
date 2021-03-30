@@ -48,6 +48,9 @@ void split_arcade_drive() {
 }
 
 void tank_drive() {
+
+    int controllerInput = master.get_analog(ANALOG_LEFT_X);
+
     left_front_wheels.move(master.get_analog(ANALOG_LEFT_Y));
     left_center_wheels.move(master.get_analog(ANALOG_LEFT_Y));
     left_back_wheels.move(master.get_analog(ANALOG_LEFT_Y));
@@ -82,8 +85,9 @@ void lift() {
     } else {
         lift_motor.move_velocity(0);
     }   
-
 }
+
+
 
 void opcontrol() {
     while (true) {
